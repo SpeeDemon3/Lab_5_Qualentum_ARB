@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-lastest # Se creara una maquina virtual donde se ejecutaran las pruebas
+    runs-on: ubuntu-latest # Se creara una maquina virtual donde se ejecutaran las pruebas
     steps:
     - name: Checkout repository # Se hace un checkout del repositorio
       uses: actions/checkout@v4
