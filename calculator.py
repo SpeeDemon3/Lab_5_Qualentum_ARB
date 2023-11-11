@@ -18,9 +18,11 @@ def divide (a, b):
     controlando la excepcion que pudiese ocurrir al dividir por 0
     """
     try:
-        return a / b
+        result = a / b
     except ZeroDivisionError:
-        return print("You can´t divide by zero!!!")
+        print("You can't divide by zero!!!")
+        result = None
+    return result
 
 
 if __name__ == "__main__":

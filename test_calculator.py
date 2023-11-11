@@ -22,9 +22,9 @@ class Test_Calculator(unittest.TestCase):
         """Test para la funcion restar"""
         self.assertEqual(subtract(1987, 29), 1958)
 
-        self.assertEqual(subtract(-9, 2), -7)
+        self.assertEqual(subtract(-9, 2), -11)
 
-        self.assertEqual(subtract(-10, -33), -43)
+        self.assertEqual(subtract(-10, -33), 23)
 
     def test_multiply(self):
         """Test para la funcion multiplicar"""
@@ -34,4 +34,15 @@ class Test_Calculator(unittest.TestCase):
 
         self.assertEqual(multiply(-2, -5), 10)
 
-    
+    def test_divide(self):
+        """
+        Test para la funcion division, controlando la excepcion 
+        que pudiese ocurrir al dividir entre 0 
+        """
+        self.assertEqual(divide(10, 5), 2)
+
+        self.assertEqual(divide(10, 100), 0.1)
+
+
+if __name__ == '__main__':
+    unittest.main()
