@@ -1,0 +1,24 @@
+name: Python CI # Nombre
+
+# Lo que pasara cuando se haga un 'push'
+on:
+  push:
+    branches: [ main ] # Main es el nombre de la rama principal
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-lastest # Se creara una maquina virtual donde se ejecutaran las pruebas
+    steps:
+    - name: Checkout repository # Se hace un checkout del repositorio
+      uses: actions/checkout@v4
+
+    - name: Set up Python # Set up de un entorno para python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8 # Version que se utilizara de python
+
+    - name: Run tests
+      run: # Ejecucion de las pruebas en el fichero test_calculator.py 
+        python -m unittest test_calculator.py 
